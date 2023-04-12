@@ -37,4 +37,15 @@ To find out who is married to Jane, you can type: spouse(john, jane).
 To find out who is the son of Kate, you can type: son(X, kate).
 To find out who is the surviving spouse, you can type: surviving_spouse(X).
 To find out who is an eligible heir, you can type: eligible_heir(X).
-You can also use logical operators such as AND (",") and OR (";") to combine queries. For example, to find out who is the son or daughter of John and Jane, you can type: (son(X, john) ; daughter(X, jane))*/
+You can also use logical operators such as AND (",") and OR (";") to combine queries. For example, to find out who is the son or daughter of John and Jane, you can type: (son(X, john) ; daughter(X, jane))
+
+To query for surviving spouse/child;
+?- assert(dead(jane)).
+true.
+?- surviving_spouse(X).
+false.
+?- surviving_child(X).
+true.
+?- eligible_heir(michael).
+true.
+*/
